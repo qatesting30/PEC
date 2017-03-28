@@ -21,4 +21,7 @@ public class Loginpage {
    public WebElement loginBtn(){
 	   return driver.findElement(By.id("buttonlogin"));
    }
+   public WebElement careManagerModule(){
+	   return driver.findElement(By.id("lnkCareManager"));
+   }
 }

@@ -41,13 +41,17 @@ public class LoginUC_001 {
 		wait.until(ExpectedConditions.visibilityOf(lp.usernameTxtfield())).sendKeys(un);
 		wait.until(ExpectedConditions.elementToBeClickable(lp.passwordTxtfield())).sendKeys(pwd);
 		jse.executeScript("document.getElementById('buttonlogin').click();");
+		wait.until(ExpectedConditions.elementToBeClickable(lp.careManagerModule())).click();
+		
+		((JavascriptExecutor) driver)
+        .executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		
 		//wait.until(ExpectedConditions.elementToBeClickable(lp.loginBtn())).click();
 		//lp.usernameTxtfield().sendKeys(un);
 		//lp.passwordTxtfield().sendKeys(pwd);
 		//lp.loginBtn().click();
 	}
-  //@AfterTest
+ // @AfterTest
   public void tearDown()
   {
 	  driver.close();
