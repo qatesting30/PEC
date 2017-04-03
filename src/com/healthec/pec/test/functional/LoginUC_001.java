@@ -6,7 +6,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -32,7 +31,7 @@ public class LoginUC_001 {
 	}
 	
 	@Test
-	public static void loginTC_001()
+	public static void loginTC_001() throws Exception
 	{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		wait = new WebDriverWait(driver, 30);
@@ -42,14 +41,16 @@ public class LoginUC_001 {
 		wait.until(ExpectedConditions.elementToBeClickable(lp.passwordTxtfield())).sendKeys(pwd);
 		jse.executeScript("document.getElementById('buttonlogin').click();");
 		wait.until(ExpectedConditions.elementToBeClickable(lp.careManagerModule())).click();
-		
+		/*
 		((JavascriptExecutor) driver)
-        .executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        .executeScript("window.scrollTo(0, document.body.scrollHeight)");*/
 		
-		//wait.until(ExpectedConditions.elementToBeClickable(lp.loginBtn())).click();
-		//lp.usernameTxtfield().sendKeys(un);
-		//lp.passwordTxtfield().sendKeys(pwd);
-		//lp.loginBtn().click();
+		/* Robot robot = new Robot();	
+		 robot.keyPress(KeyEvent.);
+		 robot.keyRelease(KeyEvent.VK_PAGE_DOWN);*/
+		
+		
+	
 	}
  // @AfterTest
   public void tearDown()
